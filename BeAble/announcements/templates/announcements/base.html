@@ -26,11 +26,18 @@
             <div>Ogloszenia</div>
             <a class='nav-item nav-link' href={% url 'announcements-about' %}>O nas</a>
             <div>Zgloszenia</div>    
-        <div>Logowanie</div>
-        <div>Rejestracja</div>
+            <a class='nav-item nav-link' href={% url 'users-register' %}>Logowanie</a>
+            <a class='nav-item nav-link' href={% url 'users-login' %}>Rejestracja</a>
         </div>
     </nav>
     <div class='container pt-5'>
+    {% if messages %}
+    {% for message in messages %}
+    <div class='alert alert-{{ message.tags }}'> 
+        {{ message }}
+    </div>
+    {% endfor%}
+    {%endif%}
     {% block content %}{%endblock%}
     </div>
 

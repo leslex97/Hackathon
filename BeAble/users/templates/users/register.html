@@ -1,0 +1,22 @@
+{% extends "announcements/base.html"%}
+{% block content %}
+
+<div class='content-section'>
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class='form-group'>
+            <legend class='border-bottom mb-4'>Dolacz juz dzis</legend>
+            {{ form.as_p }}
+        </fieldset>
+        <div class ='form=group'>
+            <button class ='btn btn-outline-info' type='submit'>Rejestracja</button>
+        </div>
+    </form>
+    <div class= 'border-top pt-3'>
+        <small class = 'text-muted'>
+            Masz konto? Kliknij<a class='ml-2' href="#">Zaloguj sie</a>
+        </small>
+    </div>
+</div>
+
+{% endblock content %}
