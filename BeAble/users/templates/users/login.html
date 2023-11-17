@@ -1,24 +1,22 @@
 {% extends "base.html"%}
 {% load crispy_forms_tags %}
-
 {% block navbar %}{% endblock navbar %}
-
 {% block content %}
 
 <div class='container col-6'>
     <form method="POST">
         {% csrf_token %}
         <fieldset class='form-group'>
-            <legend class='border-bottom mb-4'>Dolacz juz dzis</legend>
+            <legend class='border-bottom mb-4'>Logowanie</legend>
             {{form | crispy}}
         </fieldset>
         <div class ='form=group'>
-            <button class ='btn btn-outline-info' type='submit'>Rejestracja</button>
+            <button class ='btn btn-outline-info' type='submit'>Wyslij</button>
         </div>
     </form>
     <div class= 'border-top pt-3'>
         <small class = 'text-muted'>
-            Masz konto? Kliknij<a class='ml-2' href="{% url 'login'%}">Zaloguj sie</a>
+            Potrzebujesz konta?<a class='ml-2' href="{% url 'register'%}">Rejestracja</a>
         </small>
     </div>
 </div>
