@@ -1,0 +1,10 @@
+{% extends "announcements/base.html"%}
+{% block content %}
+
+{% for post in posts %}
+    <h1>{{post.title}}</h1>
+    <h2>{{post.content}}</h2>
+    <p>Autor {{ post.author}},{{ post.date_posted|date:"d F Y"}}</p>
+{% endfor%}
+
+{% endblock content%}
